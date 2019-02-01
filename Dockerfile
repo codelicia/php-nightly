@@ -114,9 +114,22 @@ RUN set -eux; \
 	./buildconf; \
 	./configure \
 		--build="$gnuArch" \
+		--enable-bcmath \
+		--enable-dom \
+		--enable-filter \
+		--enable-json \
+		--enable-libxml \
+		--enable-mbstring \
+		--enable-phar \
+		--enable-tokenizer \
+		--enable-xml \
+		--enable-xmlreader \
+		--enable-xmlwriter \
 		--with-config-file-path="$PHP_INI_DIR" \
 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" \
-		\
+		--with-openssl \
+		--with-sodium=shared \
+		--with-zlib \
 		--disable-all \
         #		--enable-option-checking=fatal \
 		\
@@ -126,12 +139,9 @@ RUN set -eux; \
 ####	--enable-mbstring \
 ####	--enable-mysqlnd \
 ####	--with-password-argon2 \
-		--with-sodium=shared \
 ####	\
 ####	--with-curl \
 ####	--with-libedit \
-####	--with-openssl \
-####	--with-zlib \
 		\
 		$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') \
 		--with-libdir="lib/$debMultiarch" \
