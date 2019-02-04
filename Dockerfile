@@ -121,6 +121,8 @@ RUN set -eux; \
 		--enable-libxml \
 		--enable-mbstring \
 		--enable-phar \
+		--enable-simplexml \
+		--enable-sockets \
 		--enable-tokenizer \
 		--enable-xml \
 		--enable-xmlreader \
