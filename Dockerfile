@@ -133,17 +133,6 @@ RUN set -eux; \
 		--with-sodium=shared \
 		--with-zlib \
 		--disable-all \
-        #		--enable-option-checking=fatal \
-		\
-####	--with-mhash \
-####	\
-####	--enable-ftp \
-####	--enable-mbstring \
-####	--enable-mysqlnd \
-####	--with-password-argon2 \
-####	\
-####	--with-curl \
-####	--with-libedit \
 		\
 		$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') \
 		--with-libdir="lib/$debMultiarch" \
